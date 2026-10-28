@@ -1,9 +1,12 @@
+import { useContext } from "react"
 import { FaHeart } from "react-icons/fa"
 import { FaCartShopping } from "react-icons/fa6"
 import { Link } from "react-router-dom"
+import ProductContext from "../context/ProductProvider"
 
 
 function ProductsItems({ Products}) {
+  const { AddToCart } = useContext(ProductContext);
   return (
     <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-5 p-5">
           {Products?.map((item) => (
@@ -28,7 +31,7 @@ function ProductsItems({ Products}) {
                     <FaHeart />
                   </span>
 
-                  <span className="icon">
+                  <span onClick={()=>AddToCart(item, 1)} className="icon cursor-pointer">
                     <FaCartShopping />
                   </span>
 

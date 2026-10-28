@@ -12,6 +12,7 @@ import Kids from "./page/Kids.jsx";
 
 import SingleProducts from "./page/SingleProducts.jsx";
 import { ProductProvider } from "./context/ProductProvider.jsx";
+import Checkout from "./page/Checkout.jsx";
 
 const router = createBrowserRouter([
   {
@@ -45,6 +46,10 @@ const router = createBrowserRouter([
       {
         element: <SingleProducts />,
         path: "singleProduct/:id",
+      },
+      {
+        element: <Checkout />,
+        path: "checkout",
       },
     ],
   },
